@@ -1,0 +1,37 @@
+syntax = "proto3"; // 指定proto版本
+package read_proc;     // 指定默认包名
+
+// 指定golang包名
+option go_package = "read_proc"; //github.com/xinzezhu/protocol/barrage/
+
+// 定义服务
+service ReadProc {
+    // 定义SayHello方法
+    rpc SyncBarrage(Request) returns (Response) {}
+}
+
+message Request {
+    Header header = 1;
+    Body body = 2;
+}
+
+message Response {
+    Header header = 1;
+    Body body = 2;
+}
+
+
+message Header
+{
+    uint32 room_id= 1; // 房间ID
+} 
+
+message BarragePerSecond
+{
+	repeated string content= 1; //弹幕内容
+}
+
+message Body
+{
+    repeated BarragePerSecond barrage= 1;  // 所有的弹幕内容
+}
