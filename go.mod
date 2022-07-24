@@ -1,4 +1,4 @@
-module github.com/xinzezhu/protocol/barrage/read_proc
+module github.com/xinzezhu/protocol_barrage_read_proc
 
 go 1.18
 
