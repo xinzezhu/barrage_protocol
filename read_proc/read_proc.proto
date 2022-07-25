@@ -2,7 +2,7 @@ syntax = "proto3"; // 指定proto版本
 package read_proc;     // 指定默认包名
 
 // 指定golang包名
-option go_package = "github.com/xinzezhu/barrage_protocol/read_proc;read_proc"; 
+option go_package = "read_proc"; 
 
 // 定义服务
 service ReadProc {
