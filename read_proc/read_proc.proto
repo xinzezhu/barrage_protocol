@@ -6,7 +6,6 @@ option go_package = "read_proc";
 
 // 定义服务
 service ReadProc {
-    // 定义SayHello方法
     rpc SyncBarrage(Request) returns (Response) {}
 }
 
@@ -23,18 +22,18 @@ message Response {
 
 message Header
 {
-    uint32 room_id = 1; // 房间ID
-    int32 ret_code = 2; // 错误码
-    string ret_msg = 3; // 错误描述
+    int32 ret_code = 1; // 错误码
+    string ret_msg = 2; // 错误描述
 } 
 
 
 message BarragePerSecond
 {
-	repeated string content= 1; //弹幕内容
+    uint32 room_id = 1; // 房间ID
+    repeated string content= 2; //一秒内的弹幕内容
 }
 
 message Body
 {
-    repeated BarragePerSecond barrage= 1;  // 所有的弹幕内容
+    repeated BarragePerSecond barrage= 1;
 }
