@@ -35,5 +35,6 @@ message BarragePerSecond
 
 message Body
 {
-    repeated BarragePerSecond barrage= 1;
+    uint64 time_stamp = 1;
+    repeated BarragePerSecond barrage = 2;
 }
